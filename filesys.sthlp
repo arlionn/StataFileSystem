@@ -109,6 +109,21 @@ property for the current user only.{p_end}
 {p2line 0 35}
 {text}{break}
 
+{p 8 8 8} Turn on the writable property {p_end}
+{p 8 8 8}{stata filesys `c(sysdir_base)'a/auto.dta, glo w(on) dis}{p_end}
+
+{p 8 8 8} Turn off the writable property {p_end}
+{p 8 8 8}{stata filesys `c(sysdir_base)'a/auto.dta, glo w(off) dis}{p_end}
+
+{p 8 8 8} Turn off the writable property for the current user only{p_end}
+{p 8 8 8}{stata filesys `c(sysdir_base)'a/auto.dta, w(off) dis}{p_end}
+
+{p 8 8 8} Turn on the readable property and suppress output{p_end}
+{p 8 8 8}{stata filesys `c(sysdir_base)'a/auto.dta, glo r(on)}{p_end}
+
+{p 8 8 8} Turn off the readable property {p_end}
+{p 8 8 8}{stata filesys `c(sysdir_base)'a/auto.dta, glo r(off) dis}{p_end}
+
 {marker return}{title:Returned values}{break}
 {p2colset 10 35 35 10}
 {p2line 0 0}{p2col:Macro Name}Value{p_end}
