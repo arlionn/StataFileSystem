@@ -1,5 +1,22 @@
+********************************************************************************
+*                                                                              *
+* Description -                                                                *
+*   Program to access filesystem properties from within Stata                  *
+*                                                                              *
+* System Requirements -                                                        *
+*   JRE 1.8 or Higher.                                                         *
+*                                                                              *
+* Output -                                                                     *
+*   Optionally prints properties to the Stata console.                         *
+*                                                                              *
+* Lines -                                                                      *
+* 	198	                                                                       *
+*                                                                              *
+********************************************************************************
 
-
+*! filesys
+*! 16dec2015
+*! v 0.0.1
 
 // Drop the program if it exists in memory
 cap prog drop filesys
