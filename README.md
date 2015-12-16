@@ -17,25 +17,27 @@ Plugin is compiled under Java 8.  Should not be a problem for most installations
 
 ```
 . filesys `c(sysdir_base)'a/auto.dta, attr dis
+
+----------------------------------------------------------------------------------------------------
+    Attribute                File Attribute Value
+----------------------------------------------------------------------------------------------------
+    Created Date             20nov2015 05:44:54
+    Modified Date            20nov2015 05:44:54
+    Last Accessed Date       11dec2015 05:52:23
+    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta
+    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta
+    Parent Path              /Applications/Stata/ado/base/a
+    File Name                auto.dta
+    Is Symbolic Link         false
+    Is Regular File          true
+    Is Executable            false
+    Is Hidden                false
+    Is Readable              true
+    Is Writable              true
+----------------------------------------------------------------------------------------------------
+
 ```
 
-|----------------------------------------------------------------------------------------------------|
-|    Attribute                File Attribute Value                                                   |
-|----------------------------------------------------------------------------------------------------|
-|    Created Date             20nov2015 05:44:54                                                     |
-|    Modified Date            20nov2015 05:44:54                                                     |
-|    Last Accessed Date       11dec2015 05:52:23                                                     |
-|    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta                                |
-|    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta                                |
-|    Parent Path              /Applications/Stata/ado/base/a                                         |
-|    File Name                auto.dta                                                               |
-|    Is Symbolic Link         false                                                                  |
-|    Is Regular File          true                                                                   |
-|    Is Executable            false                                                                  |
-|    Is Hidden                false                                                                  |
-|    Is Readable              true                                                                   |
-|    Is Writable              true                                                                   |
-|----------------------------------------------------------------------------------------------------|
 
 ### You can display the returned results afterwards as well
 
@@ -66,29 +68,25 @@ macros:
 
 ```
 . filesys `c(sysdir_base)'a/auto.dta, x(on) glo dis
-```
 
+----------------------------------------------------------------------------------------------------
+    Attribute                File Attribute Value
+----------------------------------------------------------------------------------------------------
+    Created Date             20nov2015 05:44:54
+    Modified Date            20nov2015 05:44:54
+    Last Accessed Date       11dec2015 05:52:23
+    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta
+    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta
+    Parent Path              /Applications/Stata/ado/base/a
+    File Name                auto.dta
+    Is Symbolic Link         false
+    Is Regular File          true
+    Is Executable            true
+    Is Hidden                false
+    Is Readable              true
+    Is Writable              true
+----------------------------------------------------------------------------------------------------
 
-|----------------------------------------------------------------------------------------------------|
-|    Attribute                File Attribute Value                                                   |
-|----------------------------------------------------------------------------------------------------|
-|    Created Date             20nov2015 05:44:54                                                     |
-|    Modified Date            20nov2015 05:44:54                                                     |
-|    Last Accessed Date       11dec2015 05:52:23                                                     |
-|    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta                                |
-|    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta                                |
-|    Parent Path              /Applications/Stata/ado/base/a                                         |
-|    File Name                auto.dta                                                               |
-|    Is Symbolic Link         false                                                                  |
-|    Is Regular File          true                                                                   |
-|    Is Executable            true                                                                   |
-|    Is Hidden                false                                                                  |
-|    Is Readable              true                                                                   |
-|    Is Writable              true                                                                   |
-|----------------------------------------------------------------------------------------------------|
-
-
-```
 . ret li
 
 macros:
@@ -114,30 +112,26 @@ macros:
 ## Remove the executable property from the auto.dta file.
 
 ```
-filesys `c(sysdir_base)'a/auto.dta, x(off) glo dis
-```
+. filesys `c(sysdir_base)'a/auto.dta, x(off) glo dis
 
+----------------------------------------------------------------------------------------------------
+    Attribute                File Attribute Value
+----------------------------------------------------------------------------------------------------
+    Created Date             20nov2015 05:44:54
+    Modified Date            20nov2015 05:44:54
+    Last Accessed Date       11dec2015 05:52:23
+    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta
+    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta
+    Parent Path              /Applications/Stata/ado/base/a
+    File Name                auto.dta
+    Is Symbolic Link         false
+    Is Regular File          true
+    Is Executable            false
+    Is Hidden                false
+    Is Readable              true
+    Is Writable              true
+----------------------------------------------------------------------------------------------------
 
-|----------------------------------------------------------------------------------------------------|
-|    Attribute                File Attribute Value                                                   |
-|----------------------------------------------------------------------------------------------------|
-|    Created Date             20nov2015 05:44:54                                                     |
-|    Modified Date            20nov2015 05:44:54                                                     |
-|    Last Accessed Date       11dec2015 05:52:23                                                     |
-|    Absolute File Path       /Applications/Stata/ado/base/a/auto.dta                                |
-|    Canonical File Path      /Applications/Stata/ado/base/a/auto.dta                                |
-|    Parent Path              /Applications/Stata/ado/base/a                                         |
-|    File Name                auto.dta                                                               |
-|    Is Symbolic Link         false                                                                  |
-|    Is Regular File          true                                                                   |
-|    Is Executable            false                                                                  |
-|    Is Hidden                false                                                                  |
-|    Is Readable              true                                                                   |
-|    Is Writable              true                                                                   |
-|----------------------------------------------------------------------------------------------------|
-
-
-```
 . ret li
 
 macros:
