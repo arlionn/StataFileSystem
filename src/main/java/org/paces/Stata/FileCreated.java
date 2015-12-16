@@ -1,5 +1,7 @@
 package org.paces.Stata;
 
+import org.paces.Stata.Utilities.StataXTTS;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -225,7 +227,10 @@ public class FileCreated {
 	 * represent Stata dates/times
 	 */
 	public String getCreationDate() {
-		return this.createdDate.toString();
+		StataXTTS x = new StataXTTS();
+		String retval = x.stringArrayToStataDate(x.toStata(this.createdDate));
+		x = null;
+		return retval;
 	}
 
 	/***
@@ -234,7 +239,10 @@ public class FileCreated {
 	 * represent Stata dates/times
 	 */
 	public String getModifiedDate() {
-		return this.modifiedDate.toString();
+		StataXTTS x = new StataXTTS();
+		String retval = x.stringArrayToStataDate(x.toStata(this.modifiedDate));
+		x = null;
+		return retval;
 	}
 
 	/***
@@ -244,7 +252,10 @@ public class FileCreated {
 	 * represent Stata dates/times
 	 */
 	public String getLastAccessedDate() {
-		return this.lastAccessDate.toString();
+		StataXTTS x = new StataXTTS();
+		String retval = x.stringArrayToStataDate(x.toStata(this.lastAccessDate));
+		x = null;
+		return retval;
 	}
 
 	/***

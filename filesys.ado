@@ -42,10 +42,10 @@ prog def filesys, rclass
     } // End IF Block for tilde expansion on OSX
 
     // Check for the tilde character on Unix-based systems
-    else if substr(`"`file'"', 1, 1) == "~" & !inlist(`"`c(os)'"', "MacOSX", "Windows") {
+    else if substr(`"`file'"', 1, 1) == "~" {
 
         // Replace the tilde with the standard expansion
-        loc file `"`: subinstr loc file `"~"' `"/home/`c(username)'"', all'"'
+        loc file `"`: subinstr loc file `"~"' `"`: environment HOME'"', all'"'
 
     } // End IF Block for tilde expansion on Unix-based systems
 
@@ -111,6 +111,15 @@ prog def filesys, rclass
 
 	// Returns the last accessed date
 	ret loc accessed `"`accessedon'"'
+
+    // SIF Formatted creation date
+	ret loc creatednum `= clock(`"`createdon'"', "DMYhms")'
+
+    // SIF Formatted modification date
+	ret loc modifiednum `= clock(`"`modifiedon'"', "DMYhms")'
+
+    // SIF Formatted last access date
+	ret loc accessednum `= clock(`"`accessedon'"', "DMYhms")'
 
 	// Returns the symlink indicator
 	ret loc symlink `"`symlink'"'
