@@ -5,6 +5,7 @@ import org.paces.Stata.Utilities.StataXTTS;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -104,6 +105,14 @@ public class FileCreated {
 	private Long filesize;
 
 	/***
+	 * Member variable storing the name of the file owner.  If file is
+	 * symbolic link it will resolve to the owner of the file that is being
+	 * linked, other wise it will return the owner of the file directly
+	 * referenced.
+	 */
+	private String fileowner;
+
+	/***
 	 * Class constructor method
 	 * @param args A string array with at least two elements:
 	 *             First element = File path
@@ -113,36 +122,87 @@ public class FileCreated {
 	 */
 	FileCreated(String[] args) throws IOException {
 
+		// Sets the Path class variable based on the first argument passed to
+		// the class constructor
 		setPath(args[0]);
 
+		// Sets the file class object
 		setFile();
 
+		// If Stata detects a non-Windoze system it will pass the string
+		// POSIX to the second argument of the args string array
 		if (args[1].equals("POSIX")) {
-			setPosixAttributes();
-		} else {
-			setDosAttributes();
-		}
 
+			// Sets POSIX file system attributes
+			setPosixAttributes();
+
+		// If not a *nix based system
+		} else {
+
+			// Set Windoze attributes
+			setDosAttributes();
+
+		} // End ELSE Block for Windoze file system attributes
+
+		// Retrieves the creation date of the file
 		setCreationDate();
+
+		// Retrieves the last modified date of the file
 		setModifiedDate();
+
+		// Retrieves the last access date of the file
 		setLastAccessDate();
+
+		// Retrieves indicator if the file is a symbolic link
 		setSymlink();
+
+		// Retrieves indicator if the file is a regular file
 		setRegfile();
+
+		// Retrieves the size of the file
 		setFilesize();
 
+		// Retrieves indicator if the file has the executable property set
 		this.executable = this.thefile.canExecute();
 
+		// Retrieves indicator if the file can be read
 		this.readable = this.thefile.canRead();
 
+		// Retrieves indicator if the file can be written to
 		this.writable = this.thefile.canWrite();
 
+		// Retrieves the absolute path to the file
 		this.absolutepath = this.thefile.getAbsolutePath();
+
+		// Retrieves the canonical path to the file (this is OS dependent and
+		// is the equivalent of an absolute path for the OS in question)
 		this.canonicalpath = this.thefile.getCanonicalPath();
+
+		// Gets the name of the file
 		this.fileName = this.thefile.getName();
+
+		// Gets the parent directory of the file
 		this.parent = this.thefile.getParent();
+
+		// Gets an indicator if the file has the hidden property set
 		this.hidden = this.thefile.isHidden();
 
-	}
+		// If the file passed is a symbolic link
+		if (this.symlink) {
+
+			// Retrieves the name of the file owner for files that are
+			// symbolically linked
+			this.fileowner = Files.getOwner(this.filepath).getName();
+
+		// If the file is not a symbolic link
+		} else {
+
+			// Retrieves the name of the file owner w/o resolving symbolic links
+			this.fileowner = Files.getOwner(this.filepath, LinkOption.NOFOLLOW_LINKS).getName();
+
+		} // End ELSE Block for files that are not symbolic links
+
+	} // End class constructor for the FileCreated class
 
 	/***
 	 * Method used to set the Path object from the first element of the
@@ -361,6 +421,19 @@ public class FileCreated {
 	 */
 	public String getHidden() {
 		return String.valueOf(this.hidden);
+	}
+
+	/***
+	 * Method used to access the owner of the file referenced.  If the file
+	 * passed to the class constructor is a symbolic link the value returned
+	 * will be the owner of the file that is being symbolically linked.  If
+	 * the file is not a symlink it will return the owner of the directly
+	 * referenced file.
+	 * @return A string containing the name of the file owner of the passed
+	 * file.
+	 */
+	public String getFileOwner() {
+		return this.fileowner;
 	}
 
 	/***

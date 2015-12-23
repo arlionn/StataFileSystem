@@ -15,8 +15,8 @@
 ********************************************************************************
 
 *! filesys
-*! 16dec2015
-*! v 0.0.1
+*! 23dec2015
+*! v 0.0.2
 
 // Drop the program if it exists in memory
 cap prog drop filesys
@@ -171,13 +171,17 @@ prog def filesys, rclass
 	// Returns the writable indicator
 	ret loc iswritable `"`writable'"'
 
+	// Returns the name of the file owner
+	ret loc fileowner `"`fileowner'"'
+
 	// If Display option is enabled, print the file attributes on the screen
 	if `"`display'"' != "" {
 
 		di as res _n(2) "{hline 100}" _continue
 		di as res "{p2colset 5 30 30 5}{p2col:Attribute}File Attribute Value{p_end}" 
 		di as res "{hline 100}" _continue
-		di as res "{p2colset 5 30 30 5}{p2col:Created Date}`createdon'{p_end}" 
+		di as res "{p2colset 5 30 30 5}{p2col:File Owner}`fileowner'{p_end}"
+		di as res "{p2colset 5 30 30 5}{p2col:Created Date}`createdon'{p_end}"
 		di as res "{p2colset 5 30 30 5}{p2col:Modified Date}`modifiedon'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Last Accessed Date}`accessedon'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Absolute File Path}`absolutepath'{p_end}" 
@@ -189,7 +193,7 @@ prog def filesys, rclass
 		di as res "{p2colset 5 30 30 5}{p2col:Is Executable}`executable'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Is Hidden}`hidden'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Is Readable}`readable'{p_end}" 
-		di as res "{p2colset 5 30 30 5}{p2col:Is Writable}`writable'{p_end}" 
+		di as res "{p2colset 5 30 30 5}{p2col:Is Writable}`writable'{p_end}"
 		di as res "{hline 100}" _n
 
 	} // End IF block for display option
