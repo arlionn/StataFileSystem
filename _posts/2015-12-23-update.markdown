@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Stata File System package"
+date:   2015-12-23 04:25:00
+categories: update
+---
+
+After a colleague asked me recently about users related to file system paths I wanted to check to see if it was part of the plugin I'd put together.  It wasn't originally, but now the program `filesys` will also return the name of the file owner.  

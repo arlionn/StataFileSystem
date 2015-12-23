@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stata File System</title>
+    <description></description>
+    <link>https://wbuchanan.github.io/StataFileSystem/</link>
+    <atom:link href="https://wbuchanan.github.io/StataFileSystem/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 23 Dec 2015 04:33:05 -0600</pubDate>
+    <lastBuildDate>Wed, 23 Dec 2015 04:33:05 -0600</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Stata File System package</title>
+        <description>&lt;p&gt;After a colleague asked me recently about users related to file system paths I wanted to check to see if it was part of the plugin I’d put together.  It wasn’t originally, but now the program &lt;code&gt;filesys&lt;/code&gt; will also return the name of the file owner.  &lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Dec 2015 22:25:00 -0600</pubDate>
+        <link>https://wbuchanan.github.io/StataFileSystem/update/2015/12/22/update.html</link>
+        <guid isPermaLink="true">https://wbuchanan.github.io/StataFileSystem/update/2015/12/22/update.html</guid>
+        
+        
+        <category>update</category>
+        
+      </item>
+    
+  </channel>
+</rss>
