@@ -146,6 +146,7 @@ public class StataFileSystem {
 		Macro.setLocal("parent", stataFile.getParent());
 		Macro.setLocal("readable", stataFile.getReadable());
 		Macro.setLocal("writable", stataFile.getWritable());
+		Macro.setLocal("fileowner", stataFile.getFileOwner());
 	} // End of Method declaration
 
 } // End of Class declaration
