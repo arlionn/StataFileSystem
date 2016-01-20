@@ -174,9 +174,9 @@ prog def filesys, rclass
 	// If Display option is enabled, print the file attributes on the screen
 	if `"`display'"' != "" {
 
-		di as res _n(2) "{hline 100}" _continue
+		di as res _n(2) "{hline 80}" _continue
 		di as res "{p2colset 5 30 30 5}{p2col:Attribute}File Attribute Value{p_end}" 
-		di as res "{hline 100}" _continue
+		di as res "{hline 80}" _continue
 		di as res "{p2colset 5 30 30 5}{p2col:Created Date}`createdon'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Modified Date}`modifiedon'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Last Accessed Date}`accessedon'{p_end}" 
@@ -190,7 +190,7 @@ prog def filesys, rclass
 		di as res "{p2colset 5 30 30 5}{p2col:Is Hidden}`hidden'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Is Readable}`readable'{p_end}" 
 		di as res "{p2colset 5 30 30 5}{p2col:Is Writable}`writable'{p_end}" 
-		di as res "{hline 100}" _n
+		di as res "{hline 80}" _n
 
 	} // End IF block for display option
 
