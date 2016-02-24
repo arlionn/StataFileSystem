@@ -66,7 +66,7 @@
 <p>A Stata program to access and modify file system properties.  Currently, the program/plugin allow users to:</p>
 
 <ol>
-  <li>Access file attributes </li>
+  <li>Access file attributes</li>
   <li>Set the file to be executable globally or for the owner only</li>
   <li>Set the file to be readable globally or for the owner only</li>
   <li>Set the file to be writable globally or for the owner only</li>
@@ -100,7 +100,7 @@
 
 </code></pre>
 
-<p>You can display the returned results afterwards as well.  </p>
+<p>You can display the returned results afterwards as well.</p>
 
 <pre><code>. ret li
 
@@ -124,7 +124,7 @@ macros:
             r(created) : "20nov2015 05:44:54"
 </code></pre>
 
-<p>The <code>r(accessednum)</code>, <code>r(creatednum)</code>, and <code>r(modifiednum)</code> macros return the SIF date value for the String timestamps with corresponding names.  To display the values with date time formatting use the <code>%tc</code> formatting mask : </p>
+<p>The <code>r(accessednum)</code>, <code>r(creatednum)</code>, and <code>r(modifiednum)</code> macros return the SIF date value for the String timestamps with corresponding names.  To display the values with date time formatting use the <code>%tc</code> formatting mask :</p>
 
 <pre><code>. di %tc `r(accessednum)'
 11dec2015 05:52:23
