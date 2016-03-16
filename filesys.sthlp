@@ -150,7 +150,7 @@ property for the current user only.{p_end}
 {p2colset 10 35 35 10}{p2col:r(created)}String containing the created date{p_end}
 {p2line 0 0}
 
-{title: Author}{break}
+{title:Author}{break}
 {p 4 4 8}William R. Buchanan, Ph.D.{p_end}
 {p 4 4 8}Data Scientist{p_end}
 {p 4 4 8}{browse "http://mpls.k12.mn.us":Minneapolis Public Schools}{p_end}
