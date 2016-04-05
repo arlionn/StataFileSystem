@@ -16,7 +16,7 @@
 
 *! filesys
 *! 05apr2016
-*! v 1.0.0
+*! v 1.0.1
 
 // Drop the program if it exists in memory
 cap prog drop filesys
@@ -51,7 +51,7 @@ prog def filesys, rclass
 	else loc x "`xecutable'"
 	
     // Check for a tilde in the first character 
-    if substr(`"`file'"', 1, 1) == "~" & `"`c(os)'"' == "MacOSX" {
+    if substr(`"`file'"', 1, 1) == "~" {
 
         // Replace the tilde with the standard expansion
         loc file `"`: subinstr loc file `"~"' `"`: environment HOME'"', all'"'
